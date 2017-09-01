@@ -1,0 +1,12 @@
+# Linux Command
+
+1. Ctrl + H
+    显示隐藏文件
+2. Ctrl + Alt + A
+    调出终端
+3. mkdir
+    创建新目录
+4. cd {name}
+    进入到某个文件夹
+5. pwd
+    显示当前文件夹路径
