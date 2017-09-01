@@ -22,9 +22,12 @@
 
 ### 图片与链接
 图片为: `![](){ImgCap}{/ImgCap}`
+
 链接为: `[]()`
+
 插入链接
 [Baidu](www.baidu.com)
+
 插入图片
 ![icon](https://ss0.baidu.com/73x1bjeh1BF3odCf/it/u=1894060596,851308672&fm=73)
 
@@ -43,8 +46,8 @@
 
 ### 代码框
 只需要用两个\`把中间的代码包裹起来
-`class main{``
-    `return 0}``
+`class main{`
+    `return 0}`
 
 ### 分割线
 分割线的语法只需要三个 \* 号
