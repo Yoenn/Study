@@ -1,13 +1,13 @@
-### Git 使用
+## Git 使用
 
-##### 安装Git
+### 安装Git
 1. 安装好window版Git之后，配置用户名和email地址
 
 `git config -global user.name "your name"`
 
 `git config -global user.email "email@example.com"`
 
-##### 创建版本库
+### 创建版本库
 1. 创建一个空的目录
 
 `mkdir "folderName"`    创建空的文件夹
@@ -22,4 +22,16 @@
 
 `ls -ah`    查看.git目录
 
-3. 
+3. 将文件放到暂缓区
+
+git add "fileName"
+
+4. 把文件提交到仓库
+
+`git commit -m "msg"`     -m后面输入本次比较的说明
+
+5. 为什么Git添加文件需要add，commit两步？
+
+commit可以一次提交多个文件，所以可以多次add不同的文件。
+
+
