@@ -1,0 +1,6 @@
+###Git 使用
+
+##### 安装Git
+1. 安装好window版Git之后，配置用户名和email地址
+`git config -global user.name "your name"`
+`git config -global user.email "email@example.com"`
