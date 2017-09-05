@@ -182,5 +182,13 @@ Fast-forward: 快进模式，把master指向分支的当前提交。
 
 `git branch`
 
+#### 解决冲突
+
+1. 当branch和master分支，都各自修改了，使用快速合并，会有冲突。
+
+`git status`  (查看冲突文件)
+
+2. 
+
 
 
