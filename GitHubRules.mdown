@@ -85,7 +85,7 @@ commit可以一次提交多个文件，所以可以多次add不同的文件。
 
 #### 撤销修改
 
-1.丢弃工作区的修改
+1. 丢弃工作区的修改
 
 `git checkout -- 'fileName'`
 
@@ -114,3 +114,73 @@ commit可以一次提交多个文件，所以可以多次add不同的文件。
 `git checkout -- 'fileName'`
 
 ### 远程仓库
+
+本地Git仓库和GitHub仓库之间的传输通过SSH加密
+
+1. 创建SSH Key输入命令，点击Enter以默认参数生成密匙，在用户的主目录里有.ssh目录以及id_rsa和id_rsa.pub两个文件。
+
+ssh -keygen -t ras -C 'youremail@example.com'
+
+2. 登录GitHub，打开"setting"，"SSH and GPG Keys"页面，点"NEW SSH Key"，填上任意Title（区别机器用途），在Key文本框里粘贴id_rsa.pub.
+
+#### 添加远程库
+
+1. 登录GitHub，找到'New respository'。
+
+2. 在Repository name填仓库名，点击"Create repository"，创建一个新的仓库。
+
+3. 把本地仓库关联GitHub仓库
+
+`git remote add origin git@github.com:Yoenn/Study.git`
+
+4. 把本地库的所有内容推送到远程库
+
+`git push -u origin master` (把当前分支master推送到远程，第一次需要加-u，之后不需要)
+
+5. 把本地库内的所有有变动的文件，天津爱到暂存区
+
+`git add -A`
+
+6. 强制提交
+
+`git push -f`
+
+#### 从远程库克隆
+从远程库克隆到本地库
+
+git clone git@github.com:Yoenn/Study.git
+
+### 分支管理
+
+#### 创建与合并分支
+
+1. 创建并且切换到分支
+
+`git checkout -b 'branchName'`  (加上-b参数表示创建并切换)
+
+等价于,
+
+`git branch 'branchName'`  (创建分支)
+
+`git checkout 'branchName'`  (切换分支)
+
+2. 查看当前分支
+
+`git branch` (当前分支会标记*号)
+
+3. 把分支合并到master分支上
+
+`git merge 'branchName'`  (合并指定分支到当前分支)
+
+Fast-forward: 快进模式，把master指向分支的当前提交。
+
+4. 分支合并后，删除分支
+
+ `git branch -d dev`
+
+5. 查看分支情况
+
+`git branch`
+
+
+
