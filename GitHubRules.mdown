@@ -186,9 +186,19 @@ Fast-forward: 快进模式，把master指向分支的当前提交。
 
 1. 当branch和master分支，都各自修改了，使用快速合并，会有冲突。
 
+`git merge 'branchName'`  (合并两个分支)
+
 `git status`  (查看冲突文件)
 
-2. 
+2. 查看文件内容，修改后，重新提交。
+
+`git add 'conflictFile'`
+
+`git commit -m "conflict fixed"`
+
+3. 查看分支合并情况
+
+`git log --graph --pretty=oneline --abbrev-commit`
 
 
 
