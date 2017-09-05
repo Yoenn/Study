@@ -34,4 +34,83 @@ git add "fileName"
 
 commit可以一次提交多个文件，所以可以多次add不同的文件。
 
+### 时光机穿梭
 
+1. 查看当前仓库状态
+
+`git status`
+
+2. 查看修改的内容
+
+`git diff`
+
+3. 提交文件到仓库流程
+
+`git add "filename"`
+
+`git status`
+
+`git commit -m "msg"`
+
+`git status`
+
+#### 版本回退
+1. 显示最近到最远的提交日志（查看提交历史）
+
+`git log`
+
+`git log -pretty=online` (将每个提交记录用一行表示)
+
+2. 回到上一个版本
+
+`git reset -- hard Head^`
+
+3. 回到某个版本
+
+`git reset -- hard 'commitId'`
+
+4. 查看历史命令，回到之后的哪个版本
+
+`git reflog`
+
+#### 工作区和暂存区
+
+`git add` (提交的所有修改放到暂存区)
+
+`git commit` (一次性把暂存区所有的修改提交到分支)
+
+#### 管理修改
+
+`git diff HEAD -- 'fileName'
+
+#### 撤销修改
+
+1.丢弃工作区的修改
+
+`git checkout -- 'fileName'`
+
+2. 丢弃缓存区的修改
+
+`git status`
+
+`git reset Head 'fileName'`    (把暂存区修改撤销掉，重新放回工作区)
+
+`git status`    (检查是否暂存区是干净的，工作区有修改)
+
+`git checkout -- 'fileName'`    (丢弃工作区的修改)
+
+`git status`
+
+#### 删除文件
+
+1. 本地已删除，确定从版本库中删除文件
+
+`git rm 'fileName'`
+
+`git commit -m "msg"`
+
+2. 工作区文件删除了，从版本库恢复
+
+`git checkout -- 'fileName'`
+
+### 远程仓库
