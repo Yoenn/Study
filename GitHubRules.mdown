@@ -229,6 +229,114 @@ Fast-forward: 快进模式，把master指向分支的当前提交。
 
 3. 恢复工作区并且删除
 
-`git stash apply``git stash drop`
+`git stash apply --> git stash drop`
 
 或者 `git stash pop`
+
+#### 多人协作
+
+1. 查看远程库信息
+
+`git remote -v`
+
+2. 从本地推送到分支
+
+`git push origin "branchName"`
+
+3. 如果推送失败，先抓取远程的新提交
+
+`git pull`
+
+4. 在本地创建和远程分支对应的分支
+
+`git checkout -b "branchName" origin/"branchName"`
+
+5. 建立本地分支和远程分支的关联
+
+`git branch --set-upstream "branchName" origin/"branchName"`
+
+6. 从远程抓取分支
+
+`git pull`
+
+### 标签管理
+
+#### 创建标签
+
+1. 打个新标签
+
+`git tag "name"`
+
+2. 查看所有标签
+
+`git tag`
+
+3. 根据commit_id打标签
+
+`git tag v0.9 "commit_id"`
+
+4. 显示标签信息
+
+`git show v0.9`
+
+5. 创建带有说明的标签
+
+`git tag -a v0.1 -m "version 0.1 released" 3628164`
+
+6. 通过-s用私钥签名一个标签
+
+`git tag -s v0.2 -m "signed version 0.2 released" fec145a`
+
+#### 操作标签
+
+1. 删除标签
+
+`git tag -d v0.1`
+
+2. 推送标签到远程
+
+`git push origin "tagName"`
+
+3. 一次性推送全部尚未推送到远程的本地标签
+
+`git push origin --tags`
+
+4. 删除远程标签
+
+`git tag -d v0.9`  (删除本地)
+
+`git push origin :refs/tags/0.9`  (推送到远程)
+
+### 自定义Git
+
+#### 忽略特殊文件
+
+1. 修改.gitignore文件
+
+组合配置文件，https://github.com/github/gitignore
+
+2. 查看是否忽略某些文件
+
+`git status`
+
+3. 文件被忽略强制添加
+
+`git add -f App.class`
+
+4. 检查.gitignore规则错误
+
+`git check-ignore -v App.class`
+
+5. .gitignore需要放到版本库去做版本管理
+
+#### 配置别名
+
+1. 修改别名
+
+`git config --global alias.st status`
+
+`git st`
+
+2. --global是针对当前用户，如果不加，只针对当前仓库。
+
+3. 仓库的Git配置文件放在.git/config，当前用户的Git配置文件放在用户主目录中的.gitconfig.
