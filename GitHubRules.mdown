@@ -200,5 +200,35 @@ Fast-forward: 快进模式，把master指向分支的当前提交。
 
 `git log --graph --pretty=oneline --abbrev-commit`
 
+#### 分支管理策略
 
+1. Git用Fast forward模式合并后，删除分支，会丢掉分支信息。
+通过禁用Fast forward模式，Git会在merge时生成一个新的commit，这样就可以看出分支信息。
 
+`git checkout -b dev`
+
+`git add readme.txt`
+
+`git commit -m "add merge"`  (创建分支并更新)
+
+`git checkout master`
+
+`git merge --no-ff -m "merge with no-ff"` dev  (普通模式合并分支)
+
+`git log --graph --pretty=oneline --abbrev-commit`  (查看合并情况)
+
+#### Bug分支
+
+1. 储存当前工作现场，等之后恢复现场后继续工作。
+
+`git stash`
+
+2. 查看储存现场的记录
+
+`git stash list`
+
+3. 恢复工作区并且删除
+
+`git stash apply``git stash drop`
+
+或者 `git stash pop`
