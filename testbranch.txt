@@ -1,5 +1,0 @@
-abc
-
-master test branch test
-
-second test normal branch
