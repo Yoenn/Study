@@ -3,19 +3,24 @@
 ### 安装Git
 1. 安装好window版Git之后，配置用户名和email地址
 
-> git config -global user.name "your name"
-> git config -global user.email "email@example.com"
+`git config -global user.name "your name"`
+
+`git config -global user.email "email@example.com"`
 
 ### 创建版本库
 1. 创建一个空的目录
 
-> mkdir "folderName"    创建空的文件夹
-> cd folderName     进入文件夹
-> pwd     显示当前文件夹的路径名称
+`mkdir "folderName"`    创建空的文件夹
+
+`cd folderName`     进入文件夹
+
+`pwd`     显示当前文件夹的路径名称
 
 2. 将当前目录变成Git管理仓库
-> git init     创建一个空的仓库
-> ls -ah    查看.git目录
+
+`git init`     创建一个空的仓库
+
+`ls -ah`    查看.git目录
 
 3. 将文件放到暂缓区
 
