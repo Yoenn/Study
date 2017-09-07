@@ -1,0 +1,8 @@
+## linux常用命令
+
+### cd
+切换当前目录。
+> cd /root/Docements: 切换到目录
+> cd ./path: 切换到当前目录下的path目录
+> cd ../path
+
