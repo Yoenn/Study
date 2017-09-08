@@ -1,342 +1,238 @@
 ## Git 使用
 
 ### 安装Git
-1. 安装好window版Git之后，配置用户名和email地址
-
-`git config -global user.name "your name"`
-
-`git config -global user.email "email@example.com"`
+1. 安装好window版Git之后，配置用户名和email地址  
+`git config -global user.name "your name"`  
+`git config -global user.email "email@example.com"`  
 
 ### 创建版本库
-1. 创建一个空的目录
+1. 创建一个空的目录  
+`mkdir "folderName"`    创建空的文件夹  
+`cd folderName`     进入文件夹  
+`pwd`     显示当前文件夹的路径名称  
 
-`mkdir "folderName"`    创建空的文件夹
+2. 将当前目录变成Git管理仓库  
+`git init`     创建一个空的仓库  
+`ls -ah`    查看.git目录  
 
-`cd folderName`     进入文件夹
+3. 将文件放到暂缓区  
+git add "fileName"  
 
-`pwd`     显示当前文件夹的路径名称
+4. 把文件提交到仓库  
+`git commit -m "msg"`     -m后面输入本次比较的说明  
 
-2. 将当前目录变成Git管理仓库
-
-`git init`     创建一个空的仓库
-
-`ls -ah`    查看.git目录
-
-3. 将文件放到暂缓区
-
-git add "fileName"
-
-4. 把文件提交到仓库
-
-`git commit -m "msg"`     -m后面输入本次比较的说明
-
-5. 为什么Git添加文件需要add，commit两步？
-
-commit可以一次提交多个文件，所以可以多次add不同的文件。
+5. 为什么Git添加文件需要add，commit两步？  
+commit可以一次提交多个文件，所以可以多次add不同的文件。  
 
 ### 时光机穿梭
+1. 查看当前仓库状态  
+`git status`  
 
-1. 查看当前仓库状态
+2. 查看修改的内容  
+`git diff`  
 
-`git status`
-
-2. 查看修改的内容
-
-`git diff`
-
-3. 提交文件到仓库流程
-
-`git add "filename"`
-
-`git status`
-
-`git commit -m "msg"`
-
-`git status`
+3. 提交文件到仓库流程  
+`git add "filename"`  
+`git status`  
+`git commit -m "msg"`  
+`git status`  
 
 #### 版本回退
-1. 显示最近到最远的提交日志（查看提交历史）
-
+1. 显示最近到最远的提交日志（查看提交历史）  
 `git log`
+`git log -pretty=online` (将每个提交记录用一行表示)  
 
-`git log -pretty=online` (将每个提交记录用一行表示)
+2. 回到上一个版本  
+`git reset -- hard Head^`  
 
-2. 回到上一个版本
+3. 回到某个版本  
+`git reset -- hard 'commitId'`  
 
-`git reset -- hard Head^`
-
-3. 回到某个版本
-
-`git reset -- hard 'commitId'`
-
-4. 查看历史命令，回到之后的哪个版本
-
-`git reflog`
+4. 查看历史命令，回到之后的哪个版本  
+`git reflog`  
 
 #### 工作区和暂存区
-
-`git add` (提交的所有修改放到暂存区)
-
-`git commit` (一次性把暂存区所有的修改提交到分支)
+`git add` (提交的所有修改放到暂存区)  
+`git commit` (一次性把暂存区所有的修改提交到分支)  
 
 #### 管理修改
-
-`git diff HEAD -- 'fileName'
+`git diff HEAD -- 'fileName'  
 
 #### 撤销修改
+1. 丢弃工作区的修改  
+`git checkout -- 'fileName'`  
 
-1. 丢弃工作区的修改
-
-`git checkout -- 'fileName'`
-
-2. 丢弃缓存区的修改
-
-`git status`
-
-`git reset Head 'fileName'`    (把暂存区修改撤销掉，重新放回工作区)
-
-`git status`    (检查是否暂存区是干净的，工作区有修改)
-
-`git checkout -- 'fileName'`    (丢弃工作区的修改)
-
-`git status`
+2. 丢弃缓存区的修改  
+`git status`  
+`git reset Head 'fileName'`    (把暂存区修改撤销掉，重新放回工作区)  
+`git status`    (检查是否暂存区是干净的，工作区有修改)  
+`git checkout -- 'fileName'`    (丢弃工作区的修改)  
+`git status`  
 
 #### 删除文件
+1. 本地已删除，确定从版本库中删除文件  
+`git rm 'fileName'`  
+`git commit -m "msg"`  
 
-1. 本地已删除，确定从版本库中删除文件
-
-`git rm 'fileName'`
-
-`git commit -m "msg"`
-
-2. 工作区文件删除了，从版本库恢复
-
-`git checkout -- 'fileName'`
+2. 工作区文件删除了，从版本库恢复  
+`git checkout -- 'fileName'`  
 
 ### 远程仓库
+本地Git仓库和GitHub仓库之间的传输通过SSH加密  
+1. 创建SSH Key输入命令，点击Enter以默认参数生成密匙，在用户的主目录里有.ssh目录以及id_rsa和id_rsa.pub两个文件。  
+ssh -keygen -t ras -C 'youremail@example.com'  
 
-本地Git仓库和GitHub仓库之间的传输通过SSH加密
-
-1. 创建SSH Key输入命令，点击Enter以默认参数生成密匙，在用户的主目录里有.ssh目录以及id_rsa和id_rsa.pub两个文件。
-
-ssh -keygen -t ras -C 'youremail@example.com'
-
-2. 登录GitHub，打开"setting"，"SSH and GPG Keys"页面，点"NEW SSH Key"，填上任意Title（区别机器用途），在Key文本框里粘贴id_rsa.pub.
+2. 登录GitHub，打开"setting"，"SSH and GPG Keys"页面，点"NEW SSH Key"，填上任意Title（区别机器用途），在Key文本框里粘贴id_rsa.pub.  
 
 #### 添加远程库
+1. 登录GitHub，找到'New respository'。  
 
-1. 登录GitHub，找到'New respository'。
+2. 在Repository name填仓库名，点击"Create repository"，创建一个新的仓库。  
 
-2. 在Repository name填仓库名，点击"Create repository"，创建一个新的仓库。
+3. 把本地仓库关联GitHub仓库  
+`git remote add origin git@github.com:Yoenn/Study.git`  
 
-3. 把本地仓库关联GitHub仓库
+4. 把本地库的所有内容推送到远程库  
+`git push -u origin master` (把当前分支master推送到远程，第一次需要加-u，之后不需要)  
 
-`git remote add origin git@github.com:Yoenn/Study.git`
+5. 把本地库内的所有有变动的文件，一次性放到暂存区  
+`git add -A`  
 
-4. 把本地库的所有内容推送到远程库
-
-`git push -u origin master` (把当前分支master推送到远程，第一次需要加-u，之后不需要)
-
-5. 把本地库内的所有有变动的文件，一次性放到暂存区
-
-`git add -A`
-
-6. 强制提交
-
-`git push -f`
+6. 强制提交  
+`git push -f`  
 
 #### 从远程库克隆
-从远程库克隆到本地库
-
-git clone git@github.com:Yoenn/Study.git
+从远程库克隆到本地库  
+git clone git@github.com:Yoenn/Study.git  
 
 ### 分支管理
-
 #### 创建与合并分支
+1. 创建并且切换到分支  
+`git checkout -b 'branchName'`  (加上-b参数表示创建并切换)  
+等价于,  
+`git branch 'branchName'`  (创建分支)  
+`git checkout 'branchName'`  (切换分支)  
 
-1. 创建并且切换到分支
+2. 查看当前分支  
+`git branch` (当前分支会标记*号)  
 
-`git checkout -b 'branchName'`  (加上-b参数表示创建并切换)
+3. 把分支合并到master分支上  
+`git merge 'branchName'`  (合并指定分支到当前分支)  
+Fast-forward: 快进模式，把master指向分支的当前提交。  
 
-等价于,
+4. 分支合并后，删除分支  
+ `git branch -d dev`  
 
-`git branch 'branchName'`  (创建分支)
-
-`git checkout 'branchName'`  (切换分支)
-
-2. 查看当前分支
-
-`git branch` (当前分支会标记*号)
-
-3. 把分支合并到master分支上
-
-`git merge 'branchName'`  (合并指定分支到当前分支)
-
-Fast-forward: 快进模式，把master指向分支的当前提交。
-
-4. 分支合并后，删除分支
-
- `git branch -d dev`
-
-5. 查看分支情况
-
-`git branch`
+5. 查看分支情况  
+`git branch`  
 
 #### 解决冲突
+1. 当branch和master分支，都各自修改了，使用快速合并，会有冲突。  
+`git merge 'branchName'`  (合并两个分支)  
+`git status`  (查看冲突文件)  
 
-1. 当branch和master分支，都各自修改了，使用快速合并，会有冲突。
+2. 查看文件内容，修改后，重新提交。  
+`git add 'conflictFile'`  
+`git commit -m "conflict fixed"`  
 
-`git merge 'branchName'`  (合并两个分支)
-
-`git status`  (查看冲突文件)
-
-2. 查看文件内容，修改后，重新提交。
-
-`git add 'conflictFile'`
-
-`git commit -m "conflict fixed"`
-
-3. 查看分支合并情况
-
-`git log --graph --pretty=oneline --abbrev-commit`
+3. 查看分支合并情况  
+`git log --graph --pretty=oneline --abbrev-commit`  
 
 #### 分支管理策略
-
 1. Git用Fast forward模式合并后，删除分支，会丢掉分支信息。
-通过禁用Fast forward模式，Git会在merge时生成一个新的commit，这样就可以看出分支信息。
-
-`git checkout -b dev`
-
-`git add readme.txt`
-
-`git commit -m "add merge"`  (创建分支并更新)
-
-`git checkout master`
-
-`git merge --no-ff -m "merge with no-ff"` dev  (普通模式合并分支)
-
-`git log --graph --pretty=oneline --abbrev-commit`  (查看合并情况)
+通过禁用Fast  forward模式，Git会在merge时生成一个新的commit，这样就可以看出分支信息。  
+`git checkout -b dev`  
+`git add readme.txt`  
+`git commit -m "add merge"`  (创建分支并更新)  
+`git checkout master`  
+`git merge --no-ff -m "merge with no-ff"` dev  (普通模式合并分支)  
+`git log --graph --pretty=oneline --abbrev-commit`  (查看合并情况)  
 
 #### Bug分支
+1. 储存当前工作现场，等之后恢复现场后继续工作。  
+`git stash`  
 
-1. 储存当前工作现场，等之后恢复现场后继续工作。
+2. 查看储存现场的记录  
+`git stash list`  
 
-`git stash`
-
-2. 查看储存现场的记录
-
-`git stash list`
-
-3. 恢复工作区并且删除
-
-`git stash apply --> git stash drop`
-
-或者 `git stash pop`
+3. 恢复工作区并且删除  
+`git stash apply --> git stash drop`  
+或者 `git stash pop`  
 
 #### 多人协作
+1. 查看远程库信息  
+`git remote -v`  
 
-1. 查看远程库信息
+2. 从本地推送到分支  
+`git push origin "branchName"`  
 
-`git remote -v`
+3. 如果推送失败，先抓取远程的新提交  
+`git pull`  
 
-2. 从本地推送到分支
+4. 在本地创建和远程分支对应的分支  
+`git checkout -b "branchName" origin/"branchName"`  
 
-`git push origin "branchName"`
+5. 建立本地分支和远程分支的关联  
+`git branch --set-upstream "branchName" origin/"branchName"`  
 
-3. 如果推送失败，先抓取远程的新提交
-
-`git pull`
-
-4. 在本地创建和远程分支对应的分支
-
-`git checkout -b "branchName" origin/"branchName"`
-
-5. 建立本地分支和远程分支的关联
-
-`git branch --set-upstream "branchName" origin/"branchName"`
-
-6. 从远程抓取分支
-
-`git pull`
+6. 从远程抓取分支  
+`git pull`  
 
 ### 标签管理
-
 #### 创建标签
+1. 打个新标签  
+`git tag "name"`  
 
-1. 打个新标签
+2. 查看所有标签  
+`git tag`  
 
-`git tag "name"`
+3. 根据commit_id打标签  
+`git tag v0.9 "commit_id"`  
 
-2. 查看所有标签
+4. 显示标签信息  
+`git show v0.9`  
 
-`git tag`
+5. 创建带有说明的标签  
+`git tag -a v0.1 -m "version 0.1 released" 3628164`  
 
-3. 根据commit_id打标签
-
-`git tag v0.9 "commit_id"`
-
-4. 显示标签信息
-
-`git show v0.9`
-
-5. 创建带有说明的标签
-
-`git tag -a v0.1 -m "version 0.1 released" 3628164`
-
-6. 通过-s用私钥签名一个标签
-
-`git tag -s v0.2 -m "signed version 0.2 released" fec145a`
+6. 通过-s用私钥签名一个标签  
+`git tag -s v0.2 -m "signed version 0.2 released" fec145a`  
 
 #### 操作标签
+1. 删除标签  
+`git tag -d v0.1`  
 
-1. 删除标签
+2. 推送标签到远程  
+`git push origin "tagName"`  
 
-`git tag -d v0.1`
+3. 一次性推送全部尚未推送到远程的本地标签  
+`git push origin --tags`  
 
-2. 推送标签到远程
-
-`git push origin "tagName"`
-
-3. 一次性推送全部尚未推送到远程的本地标签
-
-`git push origin --tags`
-
-4. 删除远程标签
-
-`git tag -d v0.9`  (删除本地)
-
-`git push origin :refs/tags/0.9`  (推送到远程)
+4. 删除远程标签  
+`git tag -d v0.9`  (删除本地)  
+`git push origin :refs/tags/0.9`  (推送到远程)  
 
 ### 自定义Git
-
 #### 忽略特殊文件
+1. 修改.gitignore文件  
+组合配置文件，https://github.com/github/gitignore  
 
-1. 修改.gitignore文件
+2. 查看是否忽略某些文件  
+`git status`  
 
-组合配置文件，https://github.com/github/gitignore
+3. 文件被忽略强制添加  
+`git add -f App.class`  
 
-2. 查看是否忽略某些文件
+4. 检查.gitignore规则错误  
+`git check-ignore -v App.class`  
 
-`git status`
-
-3. 文件被忽略强制添加
-
-`git add -f App.class`
-
-4. 检查.gitignore规则错误
-
-`git check-ignore -v App.class`
-
-5. .gitignore需要放到版本库去做版本管理
+5. .gitignore需要放到版本库去做版本管理  
 
 #### 配置别名
+1. 修改别名  
+`git config --global alias.st status`  
+`git st`  
 
-1. 修改别名
-
-`git config --global alias.st status`
-
-`git st`
-
-2. --global是针对当前用户，如果不加，只针对当前仓库。
+2. --global是针对当前用户，如果不加，只针对当前仓库。  
 
 3. 仓库的Git配置文件放在.git/config，当前用户的Git配置文件放在用户主目录中的.gitconfig.
