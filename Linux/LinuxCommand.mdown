@@ -1,5 +1,9 @@
 ## linux常用命令
 
+>http://www.cnblogs.com/peida/tag/%E6%AF%8F%E6%97%A5%E4%B8%80linux%E5%91%BD%E4%BB%A4/  
+>http://blog.csdn.net/ljianhui/article/details/11100625/  
+>http://blog.csdn.net/zhangjay/article/details/6701859  
+
 ### cd
 用于切换当前目录，参数是要切换到的目录的路径。
 `cd /root/Docements`: 切换到目录  

@@ -137,7 +137,7 @@ ssh -keygen -t ras -C 'youremail@example.com'
 
 `git push -u origin master` (把当前分支master推送到远程，第一次需要加-u，之后不需要)
 
-5. 把本地库内的所有有变动的文件，天津爱到暂存区
+5. 把本地库内的所有有变动的文件，一次性放到暂存区
 
 `git add -A`
 

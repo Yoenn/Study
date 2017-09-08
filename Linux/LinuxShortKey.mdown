@@ -4,3 +4,5 @@
     Ctrl + H  
 2. 调出终端  
     Ctrl + Alt + A  
+3. 保存并退出编辑器
+    Ctrl+X
