@@ -81,8 +81,8 @@ scp [option] [origin path] [aim path]
 -r: 递归复制整个目录  
 -i: identity_file,从指定文件中读取传输时使用的密钥文件，此参数直接传递给ssh。
 
-例子，
-`scp test.txt oliverchan@192.168.1.1:/test`: 指定用户从本地服务器复制到远程服务器到指定的文件夹  
+例子，  
+`scp test.txt oliverchan@192.168.1.1:/test`:  指定用户从本地服务器复制到远程服务器到指定的文件夹  
 
 `scp test.txt 192.168.1.1:/test/test1.txt`
 不指定用户从本地服务器复制到远程服务器到指定的文件夹，并且指定文件名  
@@ -106,7 +106,7 @@ rm -i file: 删除文件file，在删除之前会询问是否进行该操作
 rm -fr dir: 强制删除目录dir中的所有文件  
 
 ### ps
-用于将某时间点的进程运行情况输出，常用参数，
+用于将某时间点的进程运行情况输出，常用参数，  
 -A: 所有的进程均显示出来  
 -a: 不与terminal有关的所有进程  
 -u: 有效用户的相关进程  
@@ -144,10 +144,10 @@ ps -axjf: 查看连同一部分进程树状态
 `killall -SIGHUP syslogd`: 重新启动syslogd  
 
 ### file
-用于判断在file命令后的文件的基本数据，基本语法，
-`file filename`
-例如，
-`file ./test`
+用于判断在file命令后的文件的基本数据，基本语法，  
+`file filename`  
+例如，  
+`file ./test`  
 
 ### tar
 用于对文件进行打包，默认情况不会压缩，常用参数，
@@ -165,9 +165,9 @@ ps -axjf: 查看连同一部分进程树状态
 解压: `tar -jxv -f filename.tar.bz2`: -C 欲解压缩的目录  
 
 ### cat
-用于查看文本文件的内容
-例如，
-`cat text | less`: 查看text文件的内容
+用于查看文本文件的内容  
+例如，  
+`cat text | less`: 查看text文件的内容  
 
 ### chagrp
 用于改变文件所属用户分组，基本语法，  
@@ -212,8 +212,8 @@ chmod g+w file: 向file的文件权限中加入用户组可写权限
 `time ps aux`
 
 user: 用户CPU时间，命令执行完成花费的用户CPU时间，即命令在用户态中执行时间总和
-system: 系统CPU时间，命令执行完成花费的系统CPU时间，即命令在核心态中执行时间总和
-real: 实际时间，从command命令行开始执行到运行终止的消逝时间
+system:  系统CPU时间，命令执行完成花费的系统CPU时间，即命令在核心态中执行时间总和  
+real: 实际时间，从command命令行开始执行到运行终止的消逝时间  
 
 ### mkdir
 用于创建指定名称的目录，基本语法，  
@@ -231,8 +231,8 @@ real: 实际时间，从command命令行开始执行到运行终止的消逝时�
 ### pwd
 用于查看当前工作目录的完整路径，基本语法:  
 `pwd [option]`  
-例如，
-`pwd`: 查看当前目录的完整路径
+例如，  
+`pwd`: 查看当前目录的完整路径  
 
 
 
