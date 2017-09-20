@@ -1,0 +1,16 @@
+update milestone
+select * from Bookings.ShipperComPartDetail group by poNo having count(poNo) > 500;
+
+select bookingNo from Bookings.ShipperComPartDetail where bookingNo in (select bookingNo from Bookings.BookingMain where customerName = 'LAZADA') group by bookingNo having count(bookingNo) > 10 and count(bookingNo) < 20 limit 1;
+
+select count(bookingNo) from Bookings.ShipperComPartDetail where bookingNo = 'UFL-BK209000435';
+
+
+UFL-BK209000431 500records
+
+UFL-BK209000435 11records
+
+
+[{"orderNo":"MPDS-397547812-8701I","bookingNo":"UFL-BK209000435","status":"INW","actionPlace1":"AACHEN","actionDateTz":"Europe/Berlin","actionDateLoc":"2017-09-15 00:00:00","dataSource":"USER_oliverchan","courierBillNo":"891001031736I","pkgUnit":"BOX","noOfPkg":"1","weight":"0.274"},{"orderNo":"MPDS-369959812-9271I","bookingNo":"UFL-BK209000435","status":"INW","actionPlace1":"AACHEN","actionDateTz":"Europe/Berlin","actionDateLoc":"2017-09-15 00:00:00","dataSource":"USER_oliverchan","courierBillNo":"891001031766I","pkgUnit":"BOX","noOfPkg":"1","weight":"0.119"},{"orderNo":"MPDS-355514812-3460I","bookingNo":"UFL-BK209000435","status":"INW","actionPlace1":"AACHEN","actionDateTz":"Europe/Berlin","actionDateLoc":"2017-09-15 00:00:00","dataSource":"USER_oliverchan","courierBillNo":"891001031776I","pkgUnit":"BOX","noOfPkg":"1","weight":"0.011"},{"orderNo":"MPDS-342158812-8601I","bookingNo":"UFL-BK209000435","status":"INW","actionPlace1":"AACHEN","actionDateTz":"Europe/Berlin","actionDateLoc":"2017-09-15 00:00:00","dataSource":"USER_oliverchan","courierBillNo":"891001031834I","pkgUnit":"BOX","noOfPkg":"1","weight":"0.115"},{"orderNo":"MPDS-392157812-8915I","bookingNo":"UFL-BK209000435","status":"INW","actionPlace1":"AACHEN","actionDateTz":"Europe/Berlin","actionDateLoc":"2017-09-15 00:00:00","dataSource":"USER_oliverchan","courierBillNo":"891001031854I","pkgUnit":"BOX","noOfPkg":"1","weight":"0.046"}]
+
+{"user":{"loginName":"oliverchan","timeZone":"","office":"","loginSite":"UFL-ECommerce"},"validationFlag":true,"returnFlag":true,"site":"UFL-ECommerce","application":"E-Commerce","module":"OrderTracking"}

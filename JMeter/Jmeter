@@ -1,0 +1,31 @@
+Jmeter
+
+create database tutorial;
+
+create table tutorials_tbl(
+	tutorial_title varchar(20),
+	tutorial_author varchar(20),
+	submission_date date
+)
+
+INSERT INTO tutorials_tbl (tutorial_title, tutorial_author, submission_date) VALUES ("Learn PHP", "John Poul", NOW());
+
+INSERT INTO tutorials_tbl (tutorial_title, tutorial_author, submission_date) VALUES ("Learn MySQL", "Abdul S", NOW());
+
+INSERT INTO tutorials_tbl (tutorial_title, tutorial_author, submission_date) VALUES ("JAVA Tutorial", "Sanjay", '2007-05-06');
+
+JDBC request:
+select * from tutorials_tbl where tutorial_title like '%learn%';
+
+
+test ftp:
+need to indicate the output file and input file, need to change to binary mode.
+
+
+
+
+
+
+测试理论，方法
+功能测试，性能测试，自动化框架，理论，方法，工具
+QA 流程管理，过程改进，持续集成，持续部署

@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="2.1">
+<hashTree>
+<TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+<stringProp name="TestPlan.comments"></stringProp>
+<boolProp name="TestPlan.functional_mode">false</boolProp>
+<boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+<elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+<collectionProp name="Arguments.arguments" />
+</elementProp>
+<stringProp name="TestPlan.user_define_classpath"></stringProp>
+</TestPlan>
+<hashTree>
+<ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+<elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+<boolProp name="LoopController.continue_forever">false</boolProp>
+<stringProp name="LoopController.loops">1</stringProp>
+</elementProp>
+<stringProp name="ThreadGroup.num_threads">1</stringProp>
+<stringProp name="ThreadGroup.ramp_time">1</stringProp>
+<longProp name="ThreadGroup.start_time">1281132211000</longProp>
+<longProp name="ThreadGroup.end_time">1281132211000</longProp>
+<boolProp name="ThreadGroup.scheduler">false</boolProp>
+<stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+<stringProp name="ThreadGroup.duration"></stringProp>
+<stringProp name="ThreadGroup.delay"></stringProp>
+</ThreadGroup>
+<hashTree>
+<CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+<collectionProp name="CookieManager.cookies" />
+<boolProp name="CookieManager.clearEachIteration">false</boolProp>
+<stringProp name="CookieManager.policy">rfc2109</stringProp>
+</CookieManager>
+<hashTree />
+<Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+<collectionProp name="Arguments.arguments">
+<elementProp name="VIEWSTATE" elementType="Argument">
+<stringProp name="Argument.name">VIEWSTATE</stringProp>
+<stringProp name="Argument.value"></stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+</elementProp>
+<elementProp name="jsessionid" elementType="Argument">
+<stringProp name="Argument.name">jsessionid</stringProp>
+<stringProp name="Argument.value">D7F18383516401DDE237CF98E0BBE921</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+</elementProp>
+</collectionProp>
+</Arguments>
+<hashTree />
+<HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+<collectionProp name="HeaderManager.headers">
+<elementProp name="" elementType="Header">
+<stringProp xml:space="preserve" name="Header.name">User-Agent</stringProp>
+<stringProp xml:space="preserve" name="Header.value">Mozilla/5.0 (Windows NT 6.1; Trident/7.0; rv:11.0) like Gecko</stringProp>
+</elementProp>
+<elementProp name="" elementType="Header">
+<stringProp xml:space="preserve" name="Header.name">Accept</stringProp>
+<stringProp xml:space="preserve" name="Header.value">image/jpeg, application/x-ms-application, image/gif, application/xaml+xml, image/pjpeg, application/x-ms-xbap, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, */*</stringProp>
+</elementProp>
+<elementProp name="" elementType="Header">
+<stringProp xml:space="preserve" name="Header.name">Accept-Language</stringProp>
+<stringProp xml:space="preserve" name="Header.value">zh-CN</stringProp>
+</elementProp>
+</collectionProp>
+</HeaderManager>
+<hashTree />
+<LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Step 1" enabled="true">
+<boolProp name="LoopController.continue_forever">false</boolProp>
+<stringProp name="LoopController.loops">1</stringProp>
+</LoopController>
+<hashTree>
+<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" enabled="true" testname="https://www-u4.ufreight.com/UFL-ECommerce/">
+<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">https://www-u4.ufreight.com/UFL-ECommerce/<collectionProp name="Arguments.arguments">
+</collectionProp>
+</elementProp>
+<stringProp name="HTTPSampler.domain">www-u4.ufreight.com</stringProp>
+<stringProp name="HTTPSampler.port">443</stringProp>
+<stringProp name="HTTPSampler.protocol">https</stringProp>
+<stringProp name="HTTPSampler.contentEncoding"></stringProp>
+<stringProp name="HTTPSampler.path">/UFL-ECommerce/</stringProp>
+<stringProp name="HTTPSampler.method">GET</stringProp>
+<boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+<stringProp name="HTTPSampler.mimetype"></stringProp>
+<stringProp name="HTTPSampler.monitor">false</stringProp>
+<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+</HTTPSampler>
+<hashTree />
+<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" enabled="true" testname="https://www-u4.ufreight.com/UFL-ECommerce/html/index.html">
+<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">https://www-u4.ufreight.com/UFL-ECommerce/html/index.html<collectionProp name="Arguments.arguments">
+</collectionProp>
+</elementProp>
+<stringProp name="HTTPSampler.domain">www-u4.ufreight.com</stringProp>
+<stringProp name="HTTPSampler.port">443</stringProp>
+<stringProp name="HTTPSampler.protocol">https</stringProp>
+<stringProp name="HTTPSampler.contentEncoding"></stringProp>
+<stringProp name="HTTPSampler.path">/UFL-ECommerce/html/index.html</stringProp>
+<stringProp name="HTTPSampler.method">GET</stringProp>
+<boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+<stringProp name="HTTPSampler.mimetype"></stringProp>
+<stringProp name="HTTPSampler.monitor">false</stringProp>
+<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+</HTTPSampler>
+<hashTree />
+<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" enabled="true" testname="https://cas02.icil.net/cas-server-webapp-3.5.0/login;jsessionid=${jsessionid}">
+<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">https://cas02.icil.net/cas-server-webapp-3.5.0/login;jsessionid=${jsessionid}<collectionProp name="Arguments.arguments">
+<elementProp elementType="HTTPArgument" name="service">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">https://www-u4.ufreight.com:8443/UFL-ECommerce/shiro-cas</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">service</stringProp>
+</elementProp>
+<elementProp elementType="HTTPArgument" name="username">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">oliverchan</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">username</stringProp>
+</elementProp>
+<elementProp elementType="HTTPArgument" name="password">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">OliverChan7</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">password</stringProp>
+</elementProp>
+<elementProp elementType="HTTPArgument" name="lt">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">LT-2632-Vd0VsOaowA5cpnna4XZtDaJgykR5Ih</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">lt</stringProp>
+</elementProp>
+<elementProp elementType="HTTPArgument" name="execution">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">e1s1</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">execution</stringProp>
+</elementProp>
+<elementProp elementType="HTTPArgument" name="_eventId">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">submit</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">_eventId</stringProp>
+</elementProp>
+<elementProp elementType="HTTPArgument" name="submit">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">登录</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">submit</stringProp>
+</elementProp>
+</collectionProp>
+</elementProp>
+<stringProp name="HTTPSampler.domain">cas02.icil.net</stringProp>
+<stringProp name="HTTPSampler.port">8443</stringProp>
+<stringProp name="HTTPSampler.protocol">https</stringProp>
+<stringProp name="HTTPSampler.contentEncoding"></stringProp>
+<stringProp name="HTTPSampler.path">/cas-server-webapp-3.5.0/login;jsessionid=${jsessionid}</stringProp>
+<stringProp name="HTTPSampler.method">POST</stringProp>
+<boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+<stringProp name="HTTPSampler.mimetype"></stringProp>
+<stringProp name="HTTPSampler.monitor">false</stringProp>
+<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+</HTTPSampler>
+<hashTree />
+<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" enabled="true" testname="https://www-u4.ufreight.com/UFL-ECommerce/html/index.html#order_status">
+<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">https://www-u4.ufreight.com/UFL-ECommerce/html/index.html#order_status<collectionProp name="Arguments.arguments">
+</collectionProp>
+</elementProp>
+<stringProp name="HTTPSampler.domain">www-u4.ufreight.com</stringProp>
+<stringProp name="HTTPSampler.port">8443</stringProp>
+<stringProp name="HTTPSampler.protocol">https</stringProp>
+<stringProp name="HTTPSampler.contentEncoding"></stringProp>
+<stringProp name="HTTPSampler.path">/UFL-ECommerce/html/index.html#order_status</stringProp>
+<stringProp name="HTTPSampler.method">GET</stringProp>
+<boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+<stringProp name="HTTPSampler.mimetype"></stringProp>
+<stringProp name="HTTPSampler.monitor">false</stringProp>
+<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+</HTTPSampler>
+<hashTree />
+<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" enabled="true" testname="https://www-u4.ufreight.com/UFL-ECommerce/html/index.html#order_status">
+<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">https://www-u4.ufreight.com/UFL-ECommerce/html/index.html#order_status<collectionProp name="Arguments.arguments">
+</collectionProp>
+</elementProp>
+<stringProp name="HTTPSampler.domain">www-u4.ufreight.com</stringProp>
+<stringProp name="HTTPSampler.port">8443</stringProp>
+<stringProp name="HTTPSampler.protocol">https</stringProp>
+<stringProp name="HTTPSampler.contentEncoding"></stringProp>
+<stringProp name="HTTPSampler.path">/UFL-ECommerce/html/index.html#order_status</stringProp>
+<stringProp name="HTTPSampler.method">GET</stringProp>
+<boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+<stringProp name="HTTPSampler.mimetype"></stringProp>
+<stringProp name="HTTPSampler.monitor">false</stringProp>
+<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+</HTTPSampler>
+<hashTree />
+<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" enabled="true" testname=":///UFL-ECommerce/messages/msg.properties">
+<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">:///UFL-ECommerce/messages/msg.properties<collectionProp name="Arguments.arguments">
+<elementProp elementType="HTTPArgument" name="_">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">1505465909005</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">_</stringProp>
+</elementProp>
+</collectionProp>
+</elementProp>
+<stringProp name="HTTPSampler.domain"></stringProp>
+<stringProp name="HTTPSampler.port">80</stringProp>
+<stringProp name="HTTPSampler.protocol"></stringProp>
+<stringProp name="HTTPSampler.contentEncoding"></stringProp>
+<stringProp name="HTTPSampler.path">/UFL-ECommerce/messages/msg.properties</stringProp>
+<stringProp name="HTTPSampler.method">GET</stringProp>
+<boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+<stringProp name="HTTPSampler.mimetype"></stringProp>
+<stringProp name="HTTPSampler.monitor">false</stringProp>
+<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+</HTTPSampler>
+<hashTree />
+<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" enabled="true" testname=":///UFL-ECommerce/common/init">
+<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">:///UFL-ECommerce/common/init<collectionProp name="Arguments.arguments">
+<elementProp elementType="HTTPArgument" name="actionGroupId">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">WebSiteInfo</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">actionGroupId</stringProp>
+</elementProp>
+<elementProp elementType="HTTPArgument" name="action">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">init</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">action</stringProp>
+</elementProp>
+<elementProp elementType="HTTPArgument" name="control">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">{"user":{"loginName":"guest","locale":"en_US","timeZone":"tz","office":"TSZ"},"validationFlag":false,"returnFlag":true,"site":"UFL-ECommerce","application":"E-Commerce","module":"OrderTracking"}</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">control</stringProp>
+</elementProp>
+</collectionProp>
+</elementProp>
+<stringProp name="HTTPSampler.domain"></stringProp>
+<stringProp name="HTTPSampler.port">80</stringProp>
+<stringProp name="HTTPSampler.protocol"></stringProp>
+<stringProp name="HTTPSampler.contentEncoding"></stringProp>
+<stringProp name="HTTPSampler.path">/UFL-ECommerce/common/init</stringProp>
+<stringProp name="HTTPSampler.method">POST</stringProp>
+<boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+<stringProp name="HTTPSampler.mimetype"></stringProp>
+<stringProp name="HTTPSampler.monitor">false</stringProp>
+<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+</HTTPSampler>
+<hashTree />
+<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" enabled="true" testname=":///UFL-ECommerce/js/template.xml">
+<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">:///UFL-ECommerce/js/template.xml<collectionProp name="Arguments.arguments">
+</collectionProp>
+</elementProp>
+<stringProp name="HTTPSampler.domain"></stringProp>
+<stringProp name="HTTPSampler.port">80</stringProp>
+<stringProp name="HTTPSampler.protocol"></stringProp>
+<stringProp name="HTTPSampler.contentEncoding"></stringProp>
+<stringProp name="HTTPSampler.path">/UFL-ECommerce/js/template.xml</stringProp>
+<stringProp name="HTTPSampler.method">GET</stringProp>
+<boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+<stringProp name="HTTPSampler.mimetype"></stringProp>
+<stringProp name="HTTPSampler.monitor">false</stringProp>
+<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+</HTTPSampler>
+<hashTree />
+<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" enabled="true" testname="https://www-u4.ufreight.com/UFL-ECommerce/html/index.html#milestone">
+<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">https://www-u4.ufreight.com/UFL-ECommerce/html/index.html#milestone<collectionProp name="Arguments.arguments">
+</collectionProp>
+</elementProp>
+<stringProp name="HTTPSampler.domain">www-u4.ufreight.com</stringProp>
+<stringProp name="HTTPSampler.port">8443</stringProp>
+<stringProp name="HTTPSampler.protocol">https</stringProp>
+<stringProp name="HTTPSampler.contentEncoding"></stringProp>
+<stringProp name="HTTPSampler.path">/UFL-ECommerce/html/index.html#milestone</stringProp>
+<stringProp name="HTTPSampler.method">GET</stringProp>
+<boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+<stringProp name="HTTPSampler.mimetype"></stringProp>
+<stringProp name="HTTPSampler.monitor">false</stringProp>
+<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+</HTTPSampler>
+<hashTree />
+<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" enabled="true" testname="https://www-u4.ufreight.com/UFL-ECommerce/common/query">
+<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">https://www-u4.ufreight.com/UFL-ECommerce/common/query<collectionProp name="Arguments.arguments">
+<elementProp elementType="HTTPArgument" name="formAction">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">QueryOrderStatus</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">formAction</stringProp>
+</elementProp>
+<elementProp elementType="HTTPArgument" name="action">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">query</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">action</stringProp>
+</elementProp>
+<elementProp elementType="HTTPArgument" name="actionGroupId">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">OrderStatusInfo</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">actionGroupId</stringProp>
+</elementProp>
+<elementProp elementType="HTTPArgument" name="criteria">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">{"bookingNo":"UFL-BK209000435","status":"INW"}</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">criteria</stringProp>
+</elementProp>
+<elementProp elementType="HTTPArgument" name="control">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">{"user":{"loginName":"oliverchan","timeZone":"","office":"","loginSite":"UFL-ECommerce"},"validationFlag":true,"returnFlag":true,"site":"UFL-ECommerce","application":"E-Commerce","module":"OrderTracking"}</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">control</stringProp>
+</elementProp>
+</collectionProp>
+</elementProp>
+<stringProp name="HTTPSampler.domain">www-u4.ufreight.com</stringProp>
+<stringProp name="HTTPSampler.port">8443</stringProp>
+<stringProp name="HTTPSampler.protocol">https</stringProp>
+<stringProp name="HTTPSampler.contentEncoding"></stringProp>
+<stringProp name="HTTPSampler.path">/UFL-ECommerce/common/query</stringProp>
+<stringProp name="HTTPSampler.method">POST</stringProp>
+<boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+<stringProp name="HTTPSampler.mimetype"></stringProp>
+<stringProp name="HTTPSampler.monitor">false</stringProp>
+<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+</HTTPSampler>
+<hashTree />
+<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" enabled="true" testname="https://www-u4.ufreight.com/UFL-ECommerce/common/validate">
+<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">https://www-u4.ufreight.com/UFL-ECommerce/common/validate<collectionProp name="Arguments.arguments">
+<elementProp elementType="HTTPArgument" name="formAction">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">QueryOrderStatus</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">formAction</stringProp>
+</elementProp>
+<elementProp elementType="HTTPArgument" name="action">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">validate</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">action</stringProp>
+</elementProp>
+<elementProp elementType="HTTPArgument" name="actionGroupId">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">OrderStatusInfo</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">actionGroupId</stringProp>
+</elementProp>
+<elementProp elementType="HTTPArgument" name="criteria">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">{"bookingNo":"UFL-BK209000435","status":"INW"}</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">criteria</stringProp>
+</elementProp>
+<elementProp elementType="HTTPArgument" name="control">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">{"user":{"loginName":"oliverchan","timeZone":"","office":"","loginSite":"UFL-ECommerce"},"validationFlag":true,"returnFlag":true,"site":"UFL-ECommerce","application":"E-Commerce","module":"OrderTracking"}</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">control</stringProp>
+</elementProp>
+</collectionProp>
+</elementProp>
+<stringProp name="HTTPSampler.domain">www-u4.ufreight.com</stringProp>
+<stringProp name="HTTPSampler.port">8443</stringProp>
+<stringProp name="HTTPSampler.protocol">https</stringProp>
+<stringProp name="HTTPSampler.contentEncoding"></stringProp>
+<stringProp name="HTTPSampler.path">/UFL-ECommerce/common/validate</stringProp>
+<stringProp name="HTTPSampler.method">POST</stringProp>
+<boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+<stringProp name="HTTPSampler.mimetype"></stringProp>
+<stringProp name="HTTPSampler.monitor">false</stringProp>
+<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+</HTTPSampler>
+<hashTree />
+<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" enabled="true" testname="https://www-u4.ufreight.com/UFL-ECommerce/js/vendor/embed.js">
+<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">https://www-u4.ufreight.com/UFL-ECommerce/js/vendor/embed.js<collectionProp name="Arguments.arguments">
+<elementProp elementType="HTTPArgument" name="_">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">1505465909006</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">_</stringProp>
+</elementProp>
+</collectionProp>
+</elementProp>
+<stringProp name="HTTPSampler.domain">www-u4.ufreight.com</stringProp>
+<stringProp name="HTTPSampler.port">8443</stringProp>
+<stringProp name="HTTPSampler.protocol">https</stringProp>
+<stringProp name="HTTPSampler.contentEncoding"></stringProp>
+<stringProp name="HTTPSampler.path">/UFL-ECommerce/js/vendor/embed.js</stringProp>
+<stringProp name="HTTPSampler.method">GET</stringProp>
+<boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+<stringProp name="HTTPSampler.mimetype"></stringProp>
+<stringProp name="HTTPSampler.monitor">false</stringProp>
+<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+</HTTPSampler>
+<hashTree />
+<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" enabled="true" testname="https://www-u4.ufreight.com/UFL-ECommerce/common/save">
+<elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">https://www-u4.ufreight.com/UFL-ECommerce/common/save<collectionProp name="Arguments.arguments">
+<elementProp elementType="HTTPArgument" name="formAction">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">UpdateOrderMilestone</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">formAction</stringProp>
+</elementProp>
+<elementProp elementType="HTTPArgument" name="action">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">save</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">action</stringProp>
+</elementProp>
+<elementProp elementType="HTTPArgument" name="actionGroupId">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">OrderStatusInfo</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">actionGroupId</stringProp>
+</elementProp>
+<elementProp elementType="HTTPArgument" name="toBeSaveObjects">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">[{"orderNo":"MPDS-397547812-8701I","bookingNo":"UFL-BK209000435","status":"INW","actionPlace1":"AACHEN","actionDateTz":"Europe/Berlin","actionDateLoc":"2017-09-15 00:00:00","dataSource":"USER_oliverchan","courierBillNo":"891001031736I","pkgUnit":"BOX","noOfPkg":"1","weight":"0.274"},{"orderNo":"MPDS-369959812-9271I","bookingNo":"UFL-BK209000435","status":"INW","actionPlace1":"AACHEN","actionDateTz":"Europe/Berlin","actionDateLoc":"2017-09-15 00:00:00","dataSource":"USER_oliverchan","courierBillNo":"891001031766I","pkgUnit":"BOX","noOfPkg":"1","weight":"0.119"},{"orderNo":"MPDS-355514812-3460I","bookingNo":"UFL-BK209000435","status":"INW","actionPlace1":"AACHEN","actionDateTz":"Europe/Berlin","actionDateLoc":"2017-09-15 00:00:00","dataSource":"USER_oliverchan","courierBillNo":"891001031776I","pkgUnit":"BOX","noOfPkg":"1","weight":"0.011"},{"orderNo":"MPDS-342158812-8601I","bookingNo":"UFL-BK209000435","status":"INW","actionPlace1":"AACHEN","actionDateTz":"Europe/Berlin","actionDateLoc":"2017-09-15 00:00:00","dataSource":"USER_oliverchan","courierBillNo":"891001031834I","pkgUnit":"BOX","noOfPkg":"1","weight":"0.115"},{"orderNo":"MPDS-392157812-8915I","bookingNo":"UFL-BK209000435","status":"INW","actionPlace1":"AACHEN","actionDateTz":"Europe/Berlin","actionDateLoc":"2017-09-15 00:00:00","dataSource":"USER_oliverchan","courierBillNo":"891001031854I","pkgUnit":"BOX","noOfPkg":"1","weight":"0.046"}]</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">toBeSaveObjects</stringProp>
+</elementProp>
+<elementProp elementType="HTTPArgument" name="control">
+<boolProp name="HTTPArgument.always_encode">true</boolProp>
+<stringProp name="Argument.value">{"user":{"loginName":"oliverchan","timeZone":"","office":"","loginSite":"UFL-ECommerce"},"validationFlag":true,"returnFlag":true,"site":"UFL-ECommerce","application":"E-Commerce","module":"OrderTracking"}</stringProp>
+<stringProp name="Argument.metadata">=</stringProp>
+<boolProp name="HTTPArgument.use_equals">true</boolProp>
+<stringProp name="Argument.name">control</stringProp>
+</elementProp>
+</collectionProp>
+</elementProp>
+<stringProp name="HTTPSampler.domain">www-u4.ufreight.com</stringProp>
+<stringProp name="HTTPSampler.port">8443</stringProp>
+<stringProp name="HTTPSampler.protocol">https</stringProp>
+<stringProp name="HTTPSampler.contentEncoding"></stringProp>
+<stringProp name="HTTPSampler.path">/UFL-ECommerce/common/save</stringProp>
+<stringProp name="HTTPSampler.method">POST</stringProp>
+<boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+<boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+<boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+<stringProp name="HTTPSampler.mimetype"></stringProp>
+<stringProp name="HTTPSampler.monitor">false</stringProp>
+<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+</HTTPSampler>
+<hashTree />
+</hashTree>
+</hashTree>
+</hashTree>
+</hashTree>
+</jmeterTestPlan>
